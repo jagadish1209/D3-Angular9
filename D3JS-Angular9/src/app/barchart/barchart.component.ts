@@ -7,11 +7,10 @@ import * as d3 from 'd3';
   encapsulation: ViewEncapsulation.None
 })
 export class BarchartComponent implements OnInit, OnChanges {
-  constructor() { }
 
 
  @Input() private data: Array<any>;
- @ViewChild('chart') private chartContainer: ElementRef;
+ @ViewChild('chart',{ static: true }) private chartContainer: ElementRef;
 
  private margin: any = {top: 20, bottom: 20, left: 20, right: 20};
  private chart: any;
@@ -22,6 +21,8 @@ export class BarchartComponent implements OnInit, OnChanges {
  private colors: any;
  private xAxis: any;
  private yAxis: any;
+ constructor() { }
+
 
   ngOnInit() {
     this.createChart();

@@ -72,8 +72,7 @@ export class MiserablesComponent implements OnInit, AfterViewInit, OnDestroy {
       .nodes(graph.nodes)
       .on('tick', () => this.ticked());
 
-    this.simulation.force('link')
-      .links(graph.links);
+    this.simulation.force('link').links(graph.links);
   }
 
   dragged(d) {
